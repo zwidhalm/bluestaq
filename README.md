@@ -19,6 +19,12 @@ System Overview
 
 The Notes Vault API is a RESTful backend application built using Spring Boot and PostgreSQL. The system follows a layered architecture to separate concerns between HTTP request handling, business logic, and data persistence.
 
+## Quick Start 
+Clone the repo 
+Cd into "bluestaq" application
+Run "docker compose up --build"
+Once running, go to "http://localhost:8080/swagger-ui/index.html" in your browser
+
 Architecture
 Client
   ↓
@@ -241,9 +247,9 @@ Potential enhancements include:
 
 - database migrations for schema versioning
 - Update note endpoint (`PUT /notes/{id}`)
-- Pagination and sorting support for large note collections
+- Pagination and sorting support for large note collections i.e (`GET /notes`)
 - Search functionality by content
-- Improved validation and standardized error responses
+- Improved validation and standardized error responses (removing try/catch and letting Spring handle granular exceptions with @ControllerAdvice)
 - Additional integration and repository tests
 - Authentication and authorization using Spring Security and JWT
 - Metrics and health monitoring via Spring Boot Actuator

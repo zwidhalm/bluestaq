@@ -1,0 +1,27 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: notes-postgres
+    environment:
+      POSTGRES_DB: notes_db
+      POSTGRES_USER: notes_user
+      POSTGRES_PASSWORD: notes_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - notes_postgres_data:/var/lib/postgresql/data
+
+  app:
+    build: .
+    container_name: notes-api
+    depends_on:
+      - postgres
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/notes_db
+      SPRING_DATASOURCE_USERNAME: notes_user
+      SPRING_DATASOURCE_PASSWORD: notes_password
+    ports:
+      - "8080:8080"
+
+volumes:
+  notes_postgres_data:

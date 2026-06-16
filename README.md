@@ -27,7 +27,7 @@ Once running, go to "http://localhost:8080/swagger-ui/index.html" in your browse
 
 ## 
 
-Architecture
+## Architecture
 Client
   ↓
 NotesController
@@ -40,14 +40,18 @@ NotesRepository
   ↓
 PostgreSQL
 
-Request Flow
+## 
+
+## Request Flow
 -A client sends an HTTP request to the API.
 -The controller validates and receives the request.
 -The service layer applies business logic.
 -The repository layer interacts with the database using Spring Data JPA.
 -The response is mapped to a DTO and returned to the client as JSON.
 
-Key Components:
+## 
+
+## Key Components:
 
 Controller Layer
 
@@ -74,7 +78,9 @@ PostgreSQL stores note records containing:
 -content
 -createdAt
 
-Deployment
+## 
+
+## Deployment
 
 The application is containerized using Docker and can be started with a single command:
 
@@ -85,6 +91,8 @@ Docker Compose provisions both:
 Spring Boot API
 PostgreSQL database
 Testing
+
+## 
 
 The project includes:
 

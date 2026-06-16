@@ -211,6 +211,7 @@ Swagger can be used to explore and execute all API operations interactively.
 The following assumptions were made during development:
 
 * Notes are simple text records and do not require user authentication or authorization.
+* Notes content is not checked for uniqueness
 * Each note consists of an identifier, content, and creation timestamp.
 * The API is intended for a single-tenant environment and does not support multiple users.
 * PostgreSQL is available through Docker Compose and is the primary persistence mechanism.
@@ -259,8 +260,10 @@ Potential enhancements include:
 - Update note endpoint (`PUT /notes/{id}`)
 - Pagination and sorting support for large note collections i.e (`GET /notes`)
 - Search functionality by content
+- If content of each note were to be unique with no duplicates, functionality to ensure uniqueness would be implemented
 - Improved validation and standardized error responses (removing try/catch and letting Spring handle granular exceptions with @ControllerAdvice)
 - Additional integration and repository tests
 - Authentication and authorization using Spring Security and JWT
 - Metrics and health monitoring via Spring Boot Actuator
 - CI/CD pipeline integration for automated testing and deployment
+

@@ -25,6 +25,8 @@ Cd into "bluestaq" application
 Run "docker compose up --build"
 Once running, go to "http://localhost:8080/swagger-ui/index.html" in your browser
 
+## 
+
 Architecture
 Client
   ↓

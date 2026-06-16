@@ -206,7 +206,7 @@ The following assumptions were made during development:
 
 The application follows a Controller → Service → Repository architecture to maintain separation of concerns and improve maintainability.
 
-**Trade-off:** Additional abstraction introduces more classes than a minimal CRUD implementation but improves scalability and testability.
+**Trade-off:** Additional abstraction introduces more classes than a minimal CRUD implementation but improves scalability and testability. One could argue that this approach is "over-engineered" but I did this to reflect the real world codebases that I have worked on.
 
 ### DTO-Based API Contract
 
@@ -239,8 +239,7 @@ The project includes:
 
 Potential enhancements include:
 
-- Global exception handling using `@RestControllerAdvice`
-- Flyway database migrations for schema versioning
+- database migrations for schema versioning
 - Update note endpoint (`PUT /notes/{id}`)
 - Pagination and sorting support for large note collections
 - Search functionality by content
